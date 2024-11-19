@@ -129,3 +129,15 @@ var listarFuncionarios = funcionarios.filter(valor =>
 var maioresQueCinquenta = funcionarios.filter(valor => valor.idade > 50);
 console.log("Os funcionários com mais de 50 anos são:", maioresQueCinquenta, "\n");
 
+//////////////////////////////////
+
+var produtos = [
+    {id: 1, descricao: "Celular", categoria: "Eletronico"},
+    {id: 2, descricao: "Notebook", categoria: "Eletronico"},
+    {id: 3, descricao: "Geladeira", categoria: "Eletrodomestico"}
+]
+
+var eletronicos = [produtos.filter(valor => valor.categoria == "Eletronico")];
+console.log("Filtrando os produtos do array com a categoria eletrônico:\n",eletronicos);
+
+
