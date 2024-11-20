@@ -155,7 +155,50 @@ var funcionarios = [
     {nome: "Juliano", idade: 80, funcao: "Analista"},
 ]
 var pessoas = funcionarios.map(element => element.nome + " " + element.idade + " " + element.funcao);
-console.log("Usando map para trazer os dados dos funcionários:\n",pessoas);
+console.log("Usando map para trazer os dados dos funcionários:\n",pessoas,"\n");
+
+////////////////////////////////
+
+var numeros = [1,2,3,4,5,6,7,8,9,10];
+var total = 0;
+var soma = numeros.reduce(function(total,numero){
+    return total + numero;
+}, 0);
+console.log("Usando o método reduce, estamos somando o total do seguinte array:\n",numeros);
+console.log("A soma total do array é:",soma,"\n");
+
+//////////////////////////////
+
+var comidas = ["Carne","Arroz","Ovo","Peixe"];
+console.log("Usando o forEach, vamos exibir na tela cada elemento dentro de um array:");
+var food = comidas.forEach(comida => console.log(comida));
+
+/////////////////////////////
+
+var array = [29, "Matheus", 34, 10, 45, "Vincenzo", "Bola", 198];
+var arrayMap = array.map((element) => {
+    if (typeof element === 'number') {
+        return element * 2;
+    } else if (typeof element === 'string') {
+        return element.toUpperCase();
+    } else {
+        return element;
+    }
+})
+console.log("\nUsando o map com condicionais para cada tipo de dado em um array:\n",arrayMap,"\n");
+
+
+var arrayFilter = array.filter(
+    function (valor) {
+        if (typeof valor === 'number') {
+            return valor;
+        }
+    }
+)
+
+console.log(arrayFilter);
+
+///////////////////////////
 
 
 
