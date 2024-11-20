@@ -138,6 +138,25 @@ var produtos = [
 ]
 
 var eletronicos = [produtos.filter(valor => valor.categoria == "Eletronico")];
-console.log("Filtrando os produtos do array com a categoria eletrônico:\n",eletronicos);
+console.log("Filtrando os produtos do array com a categoria eletrônico:\n",eletronicos, "\n");
+
+/////////////////////////////////
+
+var numeros = [3,4,5,6];
+var multiplicacao = numeros.map(valor => valor * 3)
+console.log("Utilizando o método map para multiplicar cada item de um array:\n",numeros,"\n",multiplicacao,"\n");
+
+/////////////////////////////////
+
+var funcionarios = [
+    {nome: "Matheus", idade: 20, funcao: "Progrmador"},
+    {nome: "Raphael", idade: 40, funcao: "Gerente"},
+    {nome: "Gabriel", idade: 60, funcao: "Diretor"},
+    {nome: "Juliano", idade: 80, funcao: "Analista"},
+]
+var pessoas = funcionarios.map(element => element.nome + " " + element.idade + " " + element.funcao);
+console.log("Usando map para trazer os dados dos funcionários:\n",pessoas);
+
+
 
 
