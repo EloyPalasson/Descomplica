@@ -377,6 +377,19 @@ for (let i = 0; i < sequencia.length; i++) {
             sequencia[i] = "sobrenome=" + sequencia[i].substring(10).toUpperCase();
     }
 }
-console.log("Percorrendo a string para usar o toUpperCase no sobrenome:",sequencia);
+console.log("Percorrendo a string para usar o toUpperCase no sobrenome:",sequencia,"\n");
 
 //////////////////////////////////
+
+var nomes = ["Matheus", "Raphael", "Renata", "Alex"]
+console.log("Usando o map para alterar cada um dos elementos do seguinte array:\n",nomes)
+var convertidos = nomes.map(nome => nome.toUpperCase());
+console.log("Array depois do map:",convertidos,"\n");
+
+////////////////////////////////
+
+var valores = [1,2,3,4,5];
+var valoresMap = valores.map((num) => num * num);
+console.log("Usando o map para potencializar os valores de um array:",valoresMap,"\n");
+
+///////////////////////////////
