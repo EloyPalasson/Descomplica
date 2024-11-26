@@ -185,7 +185,8 @@ var arrayMap = array.map((element) => {
         return element;
     }
 })
-console.log("\nUsando o map com condicionais para cada tipo de dado em um array:\n",arrayMap,"\n");
+console.log("\nUsando o map com condicionais para cada tipo do seguinte array:\n",array,"\n");
+console.log("Esse é o array depois de passar pelas condicionais:\n", arrayMap, "\n")
 
 
 var arrayFilter = array.filter(
@@ -196,10 +197,19 @@ var arrayFilter = array.filter(
     }
 )
 
-console.log(arrayFilter);
+console.log("Filtrando somente os dados númericos do array:\n",arrayFilter,"\n");
 
 ///////////////////////////
 
+var numeros = [1,2,3,4,5,6,7,8,9,10];
+console.log("Usando o método reduce para transformar um array em um número:\n",numeros,"\n");
+
+var total = 0;
+var soma = numeros.reduce(function(total,numero){
+    return total + numero;
+}, 0);
+
+console.log("O resultado do método reduce:",soma,"\n");
 
 
 
