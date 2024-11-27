@@ -89,15 +89,81 @@ console.log();
 var pessoa = {
     nome: 'Matheus',
     sobrenome: 'Eloy'
-}  
-console.log("Buscando a característica de um objeto pessoa:",pessoa['sobrenome']);
+}
+console.log("Buscando a característica de um objeto pessoa:", pessoa['sobrenome']);
 
 var trabalhador = new Object();
 trabalhador.nome = "Alex";
 trabalhador.sobrenome = "Palasson";
 trabalhador.profissao = "Atendente";
 
-console.log("Buscando a característica de um objeto trabalhador:",trabalhador.profissao);
+console.log("Buscando a característica de um objeto trabalhador:", trabalhador.profissao, "\n");
 
 ////////////////////////////////////////
 
+
+function criarPessoa(nome, sobrenome, idade) {
+    return {
+        nome,
+        sobrenome,
+        idade,
+        get nomeCompleto() {
+            return `${this.nome} ${this.sobrenome}`
+        }
+    };
+}
+
+var sarah = criarPessoa("Sarah", "Alves Albuquerque Felício", 20);
+var renata = criarPessoa("Renata", "Eloy Palasson", 45);
+
+console.log("Usando uma função para inserir os dados de uma pessoa e usando um getter:");
+console.log(sarah.nomeCompleto)
+console.log(renata.nomeCompleto, "\n");
+
+////////////////////////////////////////////
+
+function criarGEnte(nome, idade, p, a) {
+    return {
+        nome,
+        idade,
+        peso: p,
+        altura: a,
+        calculaImc() {
+            let imc = this.peso / (this.altura ** 2).toFixed(1);
+            if (imc < 18.5) {
+                console.log("Abaixo do peso");
+            } else if (imc >= 18.5 && imc < 24.9) {
+                console.log("Peso normal");
+            } else if (imc >= 25 && imc < 29.9) {
+                console.log("Sobrepeso");
+            } else if (imc >= 30 && imc < 34.9) {
+                console.log("Obesidade 1");
+            } else if (imc >= 35 && imc < 39.9) {
+                console.log("Obesidade 2");
+            } else console.log("Obesidade 3");
+        }
+    }
+}
+
+var matheus = criarGEnte("Matheus", 20, 100, 1.86);
+console.log("Usando uma função para calcular o IMC de uma pessoa:");
+matheus.calculaImc();
+console.log();
+
+///////////////////////////////////
+
+
+class user {
+    constructor(primeiroNome,segundoNome){
+      this.primeiroNome = primeiroNome;
+      this.segundoNome = segundoNome;
+    }
+  
+    get FullName(){
+      console.log(this.primeiroNome + " " + this.segundoNome);
+    }
+  }
+  
+  const usuario = new user("Matheus","Eloy");
+  console.log("Trazendo os dados de uamclasse criada:");
+  usuario.FullName;
