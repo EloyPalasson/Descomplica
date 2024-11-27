@@ -151,19 +151,3 @@ matheus.calculaImc();
 console.log();
 
 ///////////////////////////////////
-
-
-class user {
-    constructor(primeiroNome,segundoNome){
-      this.primeiroNome = primeiroNome;
-      this.segundoNome = segundoNome;
-    }
-  
-    get FullName(){
-      console.log(this.primeiroNome + " " + this.segundoNome);
-    }
-  }
-  
-  const usuario = new user("Matheus","Eloy");
-  console.log("Trazendo os dados de uamclasse criada:");
-  usuario.FullName;

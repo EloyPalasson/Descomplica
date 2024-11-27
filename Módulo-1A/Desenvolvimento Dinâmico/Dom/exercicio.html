@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="categoriaInput" placeholder="Digite a categoria">
+    <button onclick="filtrarPorCategoria()">Pesquisar</button>
+    <ul id="resultado"></ul>
+
+</body>
+<script>
+
+    class Objeto {
+        constructor(nome, descricao, categoria, preco) {
+            this.nome = nome;
+            this.descricao = descricao;
+            this.categoria = categoria;
+            this.preco = preco;
+        }
+    }
+
+    const listaObjetos = [
+        new Objeto("Sansung A71", "Celular para games", "Eletrônico", 1500),
+        new Objeto("Sansung TAB G21", "Tablet para estudos", "Eletrônico", 2100),
+        new Objeto("Fogão 4 bocas", "Fogão para alimentos saudáveis", "Eletrodoméstico", 1600),
+        new Objeto("Geladeira e Freezer", "Congela rápido", "Eletrodoméstico", 4500),
+        new Objeto("Air Fryer", "Agiliza seu dia", "Eletrodoméstico", 950)
+    ]
+
+    function filtrarPorCategoria() {
+        const categoriaInput = document.getElementById("categoriaInput").value;
+        var resultado = document.getElementById("resultado");
+        resultado.innerHTML = "";
+
+        const objetosFiltrados = listaObjetos.filter(objeto => objeto.categoria
+            === categoriaInput);
+
+        if (objetosFiltrados.length === 0) {
+            resultado.innerHTML = "Nenhum objeto encontrado para a categoria informada."
+            return;
+        }
+
+        objetosFiltrados.forEach(objeto => {
+            const li = document.createElement("li");
+            li.innerHTML = `
+            <strong>Nome:</strong> ${objeto.nome}<br>
+            <strong>Descrição:</strong> ${objeto.descricao}<br>
+            <strong>Categoria:</strong> ${objeto.categoria}<br>
+            <strong>Preço:</strong> ${objeto.preco}<br>
+        `;
+
+            resultado.appendChild(li);
+        });
+    }
+</script>
+
+</html>

@@ -7,6 +7,28 @@ console.log("Array invertido", numeros.reverse() + "\n");
 
 /////////////////////////////////////////
 
+var array = [1, 12, 23, 34, 45, 56, 67, 78, 89, 90];
+let imparOuMenorQueZero = false;
+let divisiveis3Ou5 = true;
+
+for (let i = 0; i < array.length; i++) {
+    if (array[i] % 2 != 0 || array[i] < 0) {
+        imparOuMenorQueZero = true;
+        break;
+    }
+}
+
+for (let j = 0; j < array.length; j++) {
+    if (array[j] % 3 != 0 || array[j] % 5 != 0) {
+        divisiveis3Ou5 = false;
+        break;
+    }
+}
+console.log("Pelo menos um número não é par ou menor que zero?",imparOuMenorQueZero);
+console.log("Todos os números são divisíveis por 3 e 5?",divisiveis3Ou5);
+
+/////////////////////////////////////////
+
 var total = 0;
 
 for (var i = 0; i < numeros.length; i++) {
@@ -287,14 +309,14 @@ do {
 
 } while (indice < numeros.length);
 
-console.log("\nA soma dos números é:", sum,"\n");
+console.log("\nA soma dos números é:", sum, "\n");
 
 ////////////////////////////////////////////
 
 const carro = {
     modelo: 'Audi A3',
     marca: 'Audi',
-    ano: 2020  
+    ano: 2020
 };
 
 console.log("Usando um for para exibir as informações do carro:");
@@ -309,34 +331,34 @@ var numeros = [2, 4, 6, 8, 10];
 
 let ax = 0;
 for (let i = 0; i < numeros.length; i++) {
-  if (numeros[i] % 2 === 0) {
-    ax += numeros[i];
-  }
+    if (numeros[i] % 2 === 0) {
+        ax += numeros[i];
+    }
 }
 
-console.log("\nSomando os valores de um array com o for:",ax,"\n");
+console.log("\nSomando os valores de um array com o for:", ax, "\n");
 
 ////////////////////////////////////////////
 
 var matheus = "Matheus";
 var m = matheus.length;
 var resultado = m < 8 ? "Esse é meu nome" : "Não sou eu não"
-console.log(matheus,resultado)
-console.log(matheus.toLocaleUpperCase(),"\n");
+console.log(matheus, resultado)
+console.log(matheus.toLocaleUpperCase(), "\n");
 
 //////////////////////////////////////////
 
 var jogo = "Barcelona versus Real madri, o melhor jogo!";
-console.log("A string original é essa:",jogo);
+console.log("A string original é essa:", jogo);
 
 var posicao = jogo.indexOf("Real");
-console.log("Usando o indexOf, essa é a posição da palavra Real:",posicao);
+console.log("Usando o indexOf, essa é a posição da palavra Real:", posicao);
 
 var cortado = jogo.slice(17,);
-console.log("Usando o Slice na string:",cortado);
+console.log("Usando o Slice na string:", cortado);
 
 var procura = jogo.includes("versus");
-console.log("Na string, tem a palavra versus?",procura,"\n");
+console.log("Na string, tem a palavra versus?", procura, "\n");
 
 ///////////////////////////////////////////
 
@@ -345,14 +367,14 @@ console.log("Utilizando métodos para as strings:");
 var str1 = "Sarah";
 var str2 = " linda";
 var str3 = str1.concat(str2);
-console.log("Usando concat:",str3);
+console.log("Usando concat:", str3);
 
 var frase = "      Olá mundo    "
-console.log("Usando trim:",frase.trim())
+console.log("Usando trim:", frase.trim())
 
 var js = "Java, Cobol e C#"
-var novoJs = js.substring(6,11);
-console.log("Usando substring:",novoJs,"\n");
+var novoJs = js.substring(6, 11);
+console.log("Usando substring:", novoJs, "\n");
 
 var texto = "Eu te amo";
 if (texto.startsWith("Eu")) {
@@ -368,28 +390,28 @@ console.log("Usando métodos para dividir uma string:");
 
 var url = "www.linkedlin.com.br?nome=matheus&sobrenome=eloy,palasson";
 var parametros = url.split("?")[1];
-console.log("Usando o método split:",parametros);
+console.log("Usando o método split:", parametros);
 var sequencia = parametros.split("&");
-console.log("usando o método split:",sequencia);
+console.log("usando o método split:", sequencia);
 
 for (let i = 0; i < sequencia.length; i++) {
     if (sequencia[i].startsWith("sobrenome=")) {
-            sequencia[i] = "sobrenome=" + sequencia[i].substring(10).toUpperCase();
+        sequencia[i] = "sobrenome=" + sequencia[i].substring(10).toUpperCase();
     }
 }
-console.log("Percorrendo a string para usar o toUpperCase no sobrenome:",sequencia,"\n");
+console.log("Percorrendo a string para usar o toUpperCase no sobrenome:", sequencia, "\n");
 
 //////////////////////////////////
 
 var nomes = ["Matheus", "Raphael", "Renata", "Alex"]
-console.log("Usando o map para alterar cada um dos elementos do seguinte array:\n",nomes)
+console.log("Usando o map para alterar cada um dos elementos do seguinte array:\n", nomes)
 var convertidos = nomes.map(nome => nome.toUpperCase());
-console.log("Array depois do map:",convertidos,"\n");
+console.log("Array depois do map:", convertidos, "\n");
 
 ////////////////////////////////
 
-var valores = [1,2,3,4,5];
+var valores = [1, 2, 3, 4, 5];
 var valoresMap = valores.map((num) => num * num);
-console.log("Usando o map para potencializar os valores de um array:",valoresMap,"\n");
+console.log("Usando o map para potencializar os valores de um array:", valoresMap, "\n");
 
 ///////////////////////////////

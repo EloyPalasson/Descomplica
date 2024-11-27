@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elelemntos do DOM</title>
+    <link rel="stylesheet" href="dom.css">
+</head>
+
+<body>
+
+    <button onclick="confirma()">Excluir item</button>
+
+    <ul>
+        <li>Java</li>
+        <li>C#</li>
+        <li>Kotlin</li>
+        <li>Cobol</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <div id="conteudo" name="divconteudo" class="mensagem"></div>
+
+    <div name="divconteudo" class="mensagem"></div>
+
+    <div name="divconteudo" class="mensagem"></div>
+
+    <span id="novoSpan" class="novo">CHEGOU A HORA PARCEIRO</span> <br>
+    <span id="novoSpan1" class="novo1">DARK SOULS 5 É REALIDADE</span>
+
+    <div class="mensagem">oi</div>
+
+    <div class="estilo">
+        estilo brabo
+    </div>
+    <div class="estilo">
+        estilo brabo de novo?
+    </div>
+    <p class="estilo">Até o P?</p>
+    <p> agora sim ficou <span class="estilo">MANEIRO</span> o estilo</p>
+
+    <ul id="lista">
+
+    </ul>
+
+    <ul class="listaFutebol">
+
+    </ul>
+
+    <p>Clique no botão aí</p>
+
+    <form>
+        <input type="button" onclick="exemploEvento()" value="Apresentar">
+    </form>
+
+    <h1 id="exemplo" onmouseover="passadinha()" onmouseout="saidinha()">Passe por cima desse texto e veja a mágica</h1>
+
+    <form>
+        <label>Email</label>
+        <input type="email" id="email">
+
+        <label>Nome</label>
+        <input type="text" id="nome">
+
+        <button type="submit" onclick="novoItem()">Cadastrar????</button>
+    </form>
+
+    <form name="formCadastro2" onsubmit="validarFormulario()">
+        <label>Email</label>
+        <input type="email" id="email2">
+
+        <label>Nome</label>
+        <input type="text" id="nome2">
+
+        <button type="submit">Cadastrar????</button>
+    </form>
+    <br>
+</body>
+<script>
+
+    function confirma() {
+        let confirmacao = confirm("Você deseja excluir esse item?")
+        if (confirmacao) {
+            alert("Você excluiu esse item.");
+        } else alert("Operação cancelada.");
+    }
+
+    elemento1 = document.getElementsByTagName('li')[0];
+    elemento1.style.background = "red";
+
+    elemento0 = document.getElementsByTagName('li')[1];
+    elemento0.style.color = "blue";
+
+    elemento2 = document.getElementsByTagName("li")[2];
+    elemento2.innerText = "SpringBoot";
+
+    elementoDiv = document.getElementById("conteudo");
+    elementoDiv.innerHTML = "<p> Estou colocando o P na div </p>";
+
+    elementoDivName = document.getElementsByName("divconteudo")[1];
+    elementoDivName.style.color = "#b3a811";
+    elementoDivName.innerText = "O CAMINHO PRA ELDOURADO";
+
+    elementoDivClass = document.getElementsByClassName("mensagem")[2];
+    elementoDivClass.innerHTML = "<p>SEM COR PRA ESSE ~_~</p>";
+
+    elementoSpan = document.querySelector(".novo");
+    elementoSpan.style.color = "#071879";
+
+    elementoSpan1 = document.querySelector(".novo1");
+    elementoSpan1.style.color = "#790760";
+
+    elementoSelector = document.querySelectorAll(".mensagem")[3];
+    elementoSelector.innerHTML = "<p> Apenas um simples jogador de vídeo game </p>";
+
+    const listaEstilo = document.querySelectorAll(".estilo");
+    for (let i = 0; i < listaEstilo.length; i++) {
+        listaEstilo[i].style.background = "blue";
+        listaEstilo[i].style.color = "white";
+        listaEstilo[i].innerText = listaEstilo[i].innerText.toUpperCase();
+    }
+
+    var elementoCreate = document.createElement("div");
+    elementoCreate.innerText = "Cabei de nascer";
+    elementoCreate.style.backgroundColor = "green";
+    document.body.append(elementoCreate);
+
+    var lista = document.getElementById("lista");
+    var li = document.createElement("li");
+    li.textContent = "Lobo";
+    lista.appendChild(li);
+
+
+    var times = ["Cortinas", "Santos", "Palmeiras", "Vasco"];
+
+    var listaTimes = document.querySelector("ul.listaFutebol");
+
+    for (var i = 0; i < times.length; i++) {
+        var time = times[i];
+        var ListaLi = document.createElement("li");
+        ListaLi.innerText = time;
+        ListaLi.style.border = "1px solid blue"
+        listaTimes.appendChild(ListaLi);
+    }
+
+    function exemploEvento() {
+        alert("Apenas um simples alert")
+    }
+
+    function passadinha() {
+        document.getElementById("exemplo").innerHTML = "A mágia está nos olhares (●'◡'●)";
+    }
+
+    function saidinha() {
+        document.getElementById("exemplo").innerHTML = "Quer ver a mágica de novo?";
+    }
+
+    function novoItem() {
+        var labelNome = document.getElementById("nome");
+        var labelEmail = document.getElementById("email");
+
+        alert("Seu nome é " + labelNome.value + " e seu email é " + labelEmail.value);
+    }
+
+    function validarFormulario() {
+        var nomePessoa = document.forms["formCadastro2"]["nome2"].value;
+        var emailPessoa = document.forms["formCadastro2"]["email2"].value;
+        if (nomePessoa == "") {
+            alert("Favor informe seu nome!");
+            event.preventDefault();
+        } else {
+            alert("Olá, " + nomePessoa + " do email: " + emailPessoa);
+            event.preventDefault();
+        }
+    }
+</script>
+</html>
