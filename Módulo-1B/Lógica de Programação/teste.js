@@ -1,9 +1,9 @@
-var nome = "Matheus";
-var idade = 21;
-var altura = 1.87;
-var casado = false;
+const sync = require('readline-sync');
 
-console.log("Tipo de Caracter:",nome);
-console.log("Tipo de Inteiros:",idade);
-console.log("Tipo de Real:",altura);
-console.log("Tipo de Booleano:",casado);
+var num1 = 0;
+var num2 = 0;
+
+num1 = sync.questionInt("Digite o primeiro numero:");
+num2 = sync.questionInt("Digite o segundo numero:");
+
+console.log("O resultado da multiplicação é de:", (num1 * num2));
