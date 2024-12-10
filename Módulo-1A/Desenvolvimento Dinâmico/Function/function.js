@@ -151,3 +151,35 @@ matheus.calculaImc();
 console.log();
 
 ///////////////////////////////////
+
+function calcularMedia(notas) {
+    var pesos = [2, 3, 5];
+    let somePesos = 0;
+    let someNotas = 0;
+
+    for (let i = 0; i < notas.length; i++) {
+        somePesos += pesos[i];
+        someNotas += notas[i] * pesos[i];
+    }
+    var media = someNotas / somePesos;
+    return media;
+}
+
+function lerNota() {
+    const notas = [];
+
+    for (let i = 0; i < 3; i++) {
+        const nota = parseFloat(sync.question(`Digite a nota ${i + 1}: `))
+        notas.push(nota);
+    }
+    return notas;
+}
+
+function main() {
+    console.log("Calculadora de Média Ponderada\n");
+    const notas = lerNota();
+    const media = calcularMedia(notas);
+    console.log(`\nA média ponderada é de ${media.toFixed(2)}`)
+}
+
+main();
